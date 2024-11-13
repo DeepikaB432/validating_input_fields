@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Task Form</title>
+    <script>
+        function validateInputs(){
+            var title = document.getElementById("title").value;
+            var description = document.getElementById("description").value;
+            var category = document.getElementById("category").value;
+
+            if (title === "") {
+                alert("Title is empty");
+                return;
+            }
+            if (description === "") {
+                alert("Description is empty");
+                return;
+            }
+            if (category === "") {
+                alert("Category is empty");
+                return;
+            }
+            alert("Form submitted successfully!");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="title">Title</label><br>
+                <input class="form-control" type="text" name="title" id="title">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label><br>
+                <textarea class="form-control" name="description" id="description" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label><br>
+                <input class="form-control" type="text" name="category" id="category">
+            </div>
+
+            <div class="form-group">
+                <label for="p_level">Priority Level</label><br>
+                <select class="form-control" name="p_level" id="p_level">
+                    <option disabled selected value>Select an item</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="prog_level">Progress Level</label><br>
+                <select class="form-control" name="prog_level" id="prog_level">
+                    <option disabled selected value>Select an item</option>
+                    <option value="not_started">Not Started</option>
+                    <option value="started">Started</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            
+            <button type="submit" onclick="validateInputs()" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
